@@ -12,8 +12,13 @@ Joosy.namespace 'Statements', ->
       "click $deleteButton" : "removeStatement"
 
     @fetch (complete) ->
-      Statement.find @params.id, (statement) =>
-        @statement = statement
+      if @params.id
+        Statement.find @params.id, (statement) =>
+          @statement = statement
+          @data = {@statement}
+          complete()
+      else
+        @statement = Statement.build()
         @data = {@statement}
         complete()
 

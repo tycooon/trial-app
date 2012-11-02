@@ -1,6 +1,7 @@
 - if @report
   .input-append
-    input.input-medium type="text" name="date"
+    input.input-small.date type="text" placeholder="Дата"
+    input.input-small.time type="text" placeholder="Время"
     button.btn.update type="button" Обновить
 
 table.table.table-striped
@@ -11,3 +12,5 @@ table.table.table-striped
       th Стоимость
   tbody
     == @render "_statements", statements: @statements
+
+== @linkTo "Добавить смету", "statements/new", class: "btn btn-small btn-primary"

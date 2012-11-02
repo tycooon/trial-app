@@ -16,4 +16,11 @@ s.destroy
 
 Timecop.return
 
-Statement.create! name: "Bar", price: 15_000, planned_date: "10.10.2013"
+15.times do |i|
+  Statement.create!(
+    name: Faker::Lorem.word.capitalize,
+    price: (rand 1..20) * 4000,
+    planned_date: (rand 1..100).days.from_now
+  )
+end
+

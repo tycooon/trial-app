@@ -22,6 +22,7 @@ end
 
 group :development, :test do
   gem "capybara"
+  gem "ffaker"
   gem "rspec-rails"
   gem "timecop"
 end

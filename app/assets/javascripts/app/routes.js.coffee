@@ -1,7 +1,10 @@
 Joosy.Router.map
   '/'               : Statements.IndexPage
   '/report'         : Statements.ReportPage
-  '/statements/:id' : Statements.ShowPage
+  '/statements'     :
+    '/new'          : Statements.ShowPage
+    '/:id'          : Statements.ShowPage
+
   404             : (path) -> alert "Page '#{path}' was not found :("
 # '/resources'    :
 #   '/'           : Resource.IndexPage

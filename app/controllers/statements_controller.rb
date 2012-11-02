@@ -12,6 +12,10 @@ class StatementsController < ApplicationController
     respond_with @statement
   end
 
+  def create
+    respond_with Statement.create!(params[:statement])
+  end
+
   def update
     respond_with @statement.update_attributes(params[:statement])
   end

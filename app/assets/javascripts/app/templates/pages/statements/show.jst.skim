@@ -6,15 +6,16 @@
 
   .control-group
     label.control-label for="statement_planned_date" Дата
-    .controls == f.textField "planned_date"
+    .controls == f.textField "planned_date", class: "date"
 
   .control-group
     label.control-label for="statement_price" Стоимость
     .controls == f.textField "price"
 
   .form-actions
-    button.btn.btn-primary Сохранить
-    |  
-    a.btn.btn-danger
-      i.icon-trash.icon-white
-      |   Удалить
+    button.btn.btn-primary.btn-small Сохранить
+    - if @statement.id()
+      |  
+      a.btn.btn-danger.btn-small
+        i.icon-trash.icon-white
+        |   Удалить

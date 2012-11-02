@@ -5,7 +5,8 @@ Joosy.namespace 'Statements', ->
     @view   'index'
 
     elements:
-      "dateInput" : "input[name=date]"
+      "dateInput" : "input.date"
+      "timeInput" : "input.time"
 
     events:
       "click button.update" : "updateStatements"
@@ -17,10 +18,7 @@ Joosy.namespace 'Statements', ->
           report:     true
         complete()
 
-    @afterLoad ->
-      @dateInput.datepicker
-        dateFormat: "dd.mm.yy"
-
     updateStatements: ->
-      Statement.find "all", params: { date: @dateInput.val() }, (statements) =>
+      date = "#{@dateInput.val()} #{@timeInput.val()}"
+      Statement.find "all", params: { date: date }, (statements) =>
         @$("table tbody").html @render "_statements", statements: statements

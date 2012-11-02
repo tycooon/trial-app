@@ -6,6 +6,8 @@ class Statement < ActiveRecord::Base
   attr_accessible *ATTRIBUTES
   after_save :create_version
 
+  validates_presence_of :name
+
   def destroy
     update_column :deleted_at, Time.current
   end
@@ -20,7 +22,7 @@ class Statement < ActiveRecord::Base
 
   def self.for_date(date)
     return present unless date.present?
-    date = Date.parse(date)
+    date = Time.zone.parse(date)
 
     statements = present(date).where{created_at <= date}.includes(:versions)
 
