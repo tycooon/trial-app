@@ -8,5 +8,6 @@ class CreateVersions < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :versions, :statement_id
   end
 end
