@@ -33,4 +33,6 @@ ActiveRecord::Schema.define(:version => 20121101143218) do
     t.datetime "updated_at",   :null => false
   end
 
+  add_index "versions", ["statement_id"], :name => "index_versions_on_statement_id"
+
 end
