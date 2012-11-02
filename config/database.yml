@@ -1,0 +1,12 @@
+
+development:
+  adapter: postgresql
+  host: 127.0.0.1
+  database: statements_development
+  username: tycooon
+
+test:
+  adapter: postgresql
+  host: 127.0.0.1
+  database: statements_test
+  username: tycooon

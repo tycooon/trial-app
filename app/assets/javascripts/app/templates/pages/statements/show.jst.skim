@@ -1,0 +1,20 @@
+
+== @formFor @statement, html: { class: "form-horizontal" }, (f) =>
+  .control-group
+    label.control-label for="statement_name" Название
+    .controls == f.textField "name"
+
+  .control-group
+    label.control-label for="statement_planned_date" Дата
+    .controls == f.textField "planned_date"
+
+  .control-group
+    label.control-label for="statement_price" Стоимость
+    .controls == f.textField "price"
+
+  .form-actions
+    button.btn.btn-primary Сохранить
+    |  
+    a.btn.btn-danger
+      i.icon-trash.icon-white
+      |   Удалить

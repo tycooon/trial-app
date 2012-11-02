@@ -1,0 +1,13 @@
+- if @report
+  .input-append
+    input.input-medium type="text" name="date"
+    button.btn.update type="button" Обновить
+
+table.table.table-striped
+  thead
+    tr
+      th Название
+      th Дата поступления денег
+      th Стоимость
+  tbody
+    == @render "_statements", statements: @statements

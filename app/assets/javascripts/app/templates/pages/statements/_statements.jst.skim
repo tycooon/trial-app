@@ -1,0 +1,5 @@
+- @statements.each (statement) =>
+  tr
+    td == @linkTo statement("name"), "statements/#{statement.id()}"
+    td = statement("planned_date")
+    td = statement("price")

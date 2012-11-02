@@ -1,0 +1,7 @@
+
+.container
+  ul.nav.nav-pills
+    li: a href="/app/#!" Список смет
+    li: a href="/app/#!/report" Отчет на дату
+
+  div id=@yield()
