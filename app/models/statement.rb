@@ -8,6 +8,8 @@ class Statement < ActiveRecord::Base
 
   validates_presence_of :name
 
+  default_scope order(:id)
+
   def destroy
     update_column :deleted_at, Time.current
   end
